@@ -265,6 +265,10 @@ PRODUCT_PACKAGES += \
     libipanat \
     liboffloadhal
 
+# Insmod files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init.insmod.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.cfg
+
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
@@ -342,9 +346,11 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
+    init.insmod.sh \
     init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
+    init.power.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.qcom.sensors.sh \
